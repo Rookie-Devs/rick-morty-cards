@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../css/index.css";
-import UserCard from "./UserCard";
 import UserCardList from "./UserCardList";
 import Pagination from "./Pagination";
 import PaginationSelector from "./PaginationSelector";
