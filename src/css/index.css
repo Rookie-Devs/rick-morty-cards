@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #202329;
+  font-family: "Urbanist", sans-serif;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  background-color: #abdc6a;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  padding-right: 50px;
+}
+.navbar .logo {
+  width: 300px;
+  height: 90px;
+  cursor: pointer;
+  margin-right: auto;
+}
+.navbar .items {
+  text-decoration: none;
+  color: white;
+  margin-right: 40px;
+  font-size: 1.9rem;
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar .items:hover {
+  color: #02afc6;
+}
+.navbar .items .link {
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+.navbar .items .link:hover {
+  color: #02afc6;
+}
+
+.userCard {
+  border: 1px solid #afafaf;
+  border-radius: 12px;
+  height: 200px;
+  width: 600px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+}
+.userCard .userCardTextContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.userCard .userCardImage {
+  min-width: 220px;
+  width: 220px;
+  height: 200px;
+  border-radius: 2px;
+}
+.userCard .userCardUsername {
+  margin: 0;
+  padding-top: 8px;
+  color: #02afc6;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.userCard .userCardUsername:hover {
+  color: #02afc6;
+}
+.userCard .userCardText {
+  color: #abdc6a;
+  padding-left: 20px;
+}
+.userCard .userCardTextValue {
+  color: white;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin-top: 30px;
+}/*# sourceMappingURL=index.css.map */

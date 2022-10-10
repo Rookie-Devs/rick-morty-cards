@@ -1,0 +1,50 @@
+.userCard {
+  border: 1px solid #afafaf;
+  border-radius: 12px;
+  height: 200px;
+  width: 600px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+
+  .userCardTextContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .userCardImage {
+    min-width: 220px;
+    width: 220px;
+    height: 200px;
+    border-radius: 2px;
+  }
+
+  .userCardUsername {
+    margin: 0;
+    padding-top: 8px;
+    color: $primary-color;
+    padding-left: 30px;
+    padding-bottom: 10px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .userCardText {
+    color: $secondary-color;
+    padding-left: 20px;
+  }
+
+  .userCardTextValue {
+    color: white;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+}
