@@ -1,0 +1,40 @@
+@import "mixins";
+
+.banner {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(https://images3.alphacoders.com/812/812062.png) no-repeat center center fixed;
+  background-size: cover;
+  .header {
+    font-size: 4rem;
+    color: white;
+  }
+  .buttonBanner {
+    border: none;
+    border-radius: 15px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 15px;
+    margin-top: 15px;
+    min-width: 100px;
+    font-family: "Urbanist", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .apiLink {
+    outline: none;
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-family: "Urbanist", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

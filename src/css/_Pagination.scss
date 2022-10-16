@@ -1,0 +1,12 @@
+@import "mixins";
+
+.paginationContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+  .buttonStyle {
+    @include defaultButton();
+  }
+}
