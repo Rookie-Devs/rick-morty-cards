@@ -92,6 +92,28 @@ body {
   text-decoration: none;
 }
 
+.searchboxContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.searchboxContainer .labelSearch {
+  font-size: 1.3rem;
+  color: #02afc6;
+  margin-right: 10px;
+}
+.searchboxContainer .searchInput {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1rem;
+  width: 300px;
+}
+
 .userCard {
   border: 1px solid #afafaf;
   border-radius: 12px;
