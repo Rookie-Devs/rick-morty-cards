@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <Banner />
         <Searchbox search={search} setSearch={setSearch} />
