@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../css/index.css";
-import Navbar from "./Navbar";
 import Banner from "./Banner";
 import Searchbox from "./Searchbox";
 import UserCardList from "./UserCardList";
@@ -25,7 +24,6 @@ const App = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="container">
         <Banner />
         <Searchbox search={search} setSearch={setSearch} />
