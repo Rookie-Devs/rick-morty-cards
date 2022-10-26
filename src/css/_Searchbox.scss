@@ -17,5 +17,12 @@
     font-family: "Urbanist", sans-serif;
     font-size: 1rem;
     width: 300px;
+    outline: none;
+
+    &:focus {
+      outline: none;
+      border: 1px solod $secondary-color;
+      box-shadow: 1px 1px 20px $secondary-color;
+    }
   }
 }

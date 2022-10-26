@@ -1,35 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../css/index.css";
-import Banner from "./Banner";
-import Searchbox from "./Searchbox";
-import UserCardList from "./UserCardList";
-import Pagination from "./Pagination";
+
+import Home from "../pages/Home";
+import About from "../pages/About";
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pages, setPages] = useState(1);
-  const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${search}`);
-      const result = await response.json();
-
-      setData(result.results);
-      setPages(result.info.pages);
-    };
-    fetchData();
-  }, [currentPage, search]);
-
   return (
     <>
-      <div className="container">
-        <Banner />
-        <Searchbox search={search} setSearch={setSearch} />
-        <UserCardList setData={setData} data={data} />
-        <Pagination pages={pages} setCurrentPage={setCurrentPage} />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path=":page" element={<Home />} />
+            <Route path="about" element={<About />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 };

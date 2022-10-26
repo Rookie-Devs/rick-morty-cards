@@ -1,5 +1,5 @@
 .userCard {
-  border: 1px solid #afafaf;
+  border: 1px solid #979797;
   border-radius: 12px;
   height: 200px;
   width: 600px;
@@ -7,6 +7,10 @@
   overflow: hidden;
   display: flex;
   text-align: center;
+
+  &:hover {
+    box-shadow: 1px 1px 20px $primary-color;
+  }
   // margin-bottom: 50px;
 
   .userCardTextContainer {

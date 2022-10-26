@@ -7,12 +7,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(https://images3.alphacoders.com/812/812062.png) no-repeat center center fixed;
+  background: url(../img/background.jpg) no-repeat center center fixed;
   background-size: cover;
-  .header {
-    font-size: 4rem;
-    color: white;
+
+  .navbarContainer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    .navbarButtons {
+      outline: none;
+      border: none;
+      border-radius: 15px;
+      background-color: $secondary-color;
+      color: $primary-color;
+      padding: 8px;
+      margin-top: 0;
+      margin-right: 10px;
+      width: 100px;
+      font-family: "Urbanist", sans-serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 1px 1px 20px $primary-color;
+      }
+    }
   }
+
+  .header {
+    font-size: 3rem;
+    color: $primary-color;
+  }
+
   .buttonBanner {
     border: none;
     border-radius: 15px;
@@ -27,14 +55,17 @@
     outline: none;
     text-decoration: none;
     cursor: pointer;
-  }
-  .apiLink {
-    outline: none;
-    background-color: $secondary-color;
-    color: $primary-color;
-    font-family: "Urbanist", sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
+    &:hover {
+      box-shadow: 1px 1px 20px $primary-color;
+    }
+    .apiLink {
+      outline: none;
+      background-color: $secondary-color;
+      color: $primary-color;
+      font-family: "Urbanist", sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
 }

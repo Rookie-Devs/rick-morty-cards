@@ -1,24 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Pagination = ({ pages = [], setCurrentPage }) => {
+const Pagination = ({ pages = [], setCurrentPage, key }) => {
+  const buttonActive = (e) => {
+    window.scrollTo({
+      top: 630,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="paginationContainer">
       {Array.from(Array(pages), (item, index) => {
         return (
-          <button
-            value={index + 1}
-            className="buttonStyle"
-            onClick={(e) => {
-              window.scrollTo({
-                top: 630,
-                behavior: "smooth",
-              });
-
-              setCurrentPage(Number(e.target.value));
-            }}
-          >
+          <Link to={`/${index + 1}`} className="buttonStyle" onClick={buttonActive} key={index}>
             {index + 1}
-          </button>
+          </Link>
         );
       })}
     </div>
