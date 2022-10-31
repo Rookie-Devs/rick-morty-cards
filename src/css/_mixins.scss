@@ -1,0 +1,18 @@
+@mixin defaultButton {
+  outline: none;
+  border: 1px solid #6b6767;
+  border-radius: 15px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  padding: 8px;
+  margin-top: 0;
+  margin-right: 3px;
+  display: inline-block;
+  justify-content: space-around;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}

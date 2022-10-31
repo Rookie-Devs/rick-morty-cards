@@ -1,0 +1,14 @@
+@import "mixins";
+
+.paginationContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+  .buttonStyle {
+    @include defaultButton();
+    min-width: 30px;
+    max-width: 35px;
+  }
+}

@@ -1,0 +1,11 @@
+.filterButton {
+  @include defaultButton;
+  width: 100px;
+  padding: 10px;
+  font-size: 1.3rem;
+  margin-left: 15px;
+
+  &:hover {
+    box-shadow: 1px 1px 25px $secondary-color;
+  }
+}
