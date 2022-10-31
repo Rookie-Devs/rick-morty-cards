@@ -1,7 +1,6 @@
 .userCard {
-  border: 1px solid #979797;
   border-radius: 12px;
-  height: 200px;
+  height: 240px;
   width: 600px;
   text-align: center;
   overflow: hidden;
@@ -9,47 +8,57 @@
   text-align: center;
 
   &:hover {
-    box-shadow: 1px 1px 20px $primary-color;
-  }
-  // margin-bottom: 50px;
-
-  .userCardTextContainer {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 10px;
+    box-shadow: 1px 1px 25px $primary-color;
+    transform: scale(1.1);
+    transition: all 500ms;
   }
 
   .userCardImage {
     min-width: 220px;
     width: 220px;
-    height: 200px;
+    height: 240px;
     border-radius: 2px;
   }
 
-  .userCardUsername {
-    margin: 0;
-    padding-top: 8px;
-    color: $primary-color;
-    padding-left: 30px;
-    padding-bottom: 10px;
+  .userCardTextContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+    background: rgb(60, 62, 68);
 
-    &:hover {
+    .userCardUsername {
+      margin: 0;
+      padding-top: 2px;
       color: $primary-color;
+      padding-bottom: 10px;
+      padding-top: 15px;
+      font-size: 1.2rem;
+      text-align: center;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
-  }
 
-  .userCardText {
-    color: $secondary-color;
-    padding-left: 20px;
-  }
+    .infoContainer {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.95rem;
+      text-align: center;
+      padding-bottom: 10px;
 
-  .userCardTextValue {
-    color: white;
-    padding-left: 20px;
-    padding-bottom: 10px;
+      .userCardText {
+        color: $secondary-color;
+      }
+
+      .userCardTextValue {
+        color: white;
+        padding-bottom: 10px;
+      }
+    }
   }
 }

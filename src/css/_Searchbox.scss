@@ -9,6 +9,7 @@
     font-size: 1.3rem;
     color: $primary-color;
     margin-right: 10px;
+    font-weight: bold;
   }
   .searchInput {
     border: none;
@@ -22,7 +23,7 @@
     &:focus {
       outline: none;
       border: 1px solod $secondary-color;
-      box-shadow: 1px 1px 20px $secondary-color;
+      box-shadow: 1px 1px 25px $secondary-color;
     }
   }
 }

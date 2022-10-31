@@ -8,5 +8,7 @@
   padding-bottom: 20px;
   .buttonStyle {
     @include defaultButton();
+    min-width: 30px;
+    max-width: 35px;
   }
 }

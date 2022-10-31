@@ -22,7 +22,7 @@
       color: $primary-color;
       padding: 8px;
       margin-top: 0;
-      margin-right: 10px;
+      margin-right: 20px;
       width: 100px;
       font-family: "Urbanist", sans-serif;
       font-size: 1.6rem;
@@ -31,14 +31,14 @@
       cursor: pointer;
 
       &:hover {
-        box-shadow: 1px 1px 20px $primary-color;
+        box-shadow: 1px 1px 25px $secondary-color;
       }
     }
   }
 
   .header {
     font-size: 3rem;
-    color: $primary-color;
+    color: white;
   }
 
   .buttonBanner {
@@ -55,9 +55,11 @@
     outline: none;
     text-decoration: none;
     cursor: pointer;
+
     &:hover {
-      box-shadow: 1px 1px 20px $primary-color;
+      box-shadow: 1px 1px 25px $secondary-color;
     }
+
     .apiLink {
       outline: none;
       background-color: $secondary-color;

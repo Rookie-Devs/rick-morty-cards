@@ -11,48 +11,6 @@ body {
   height: 100vh;
 }
 
-.navbar {
-  width: 100%;
-  height: 100px;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgb(171, 220, 106);
-  background: linear-gradient(90deg, rgb(171, 220, 106) 46%, rgb(0, 212, 255) 85%);
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  list-style: none;
-  padding-right: 50px;
-  margin-bottom: 0;
-}
-.navbar .logo {
-  width: 260px;
-  padding-bottom: 4px;
-  cursor: pointer;
-  margin-right: auto;
-}
-.navbar .items {
-  text-decoration: none;
-  color: white;
-  margin-right: 25px;
-  font-size: 1.4rem;
-  width: 130px;
-  display: flex;
-  justify-content: flex-end;
-}
-.navbar .items .link {
-  outline: none;
-  text-decoration: none;
-  color: white;
-}
-.navbar .items .link:hover {
-  color: #abdc6a;
-}
-
 .banner {
   height: 100vh;
   display: flex;
@@ -76,7 +34,7 @@ body {
   color: #02afc6;
   padding: 8px;
   margin-top: 0;
-  margin-right: 10px;
+  margin-right: 20px;
   width: 100px;
   font-family: "Urbanist", sans-serif;
   font-size: 1.6rem;
@@ -85,11 +43,11 @@ body {
   cursor: pointer;
 }
 .banner .navbarContainer .navbarButtons:hover {
-  box-shadow: 1px 1px 20px #02afc6;
+  box-shadow: 1px 1px 25px #abdc6a;
 }
 .banner .header {
   font-size: 3rem;
-  color: #02afc6;
+  color: white;
 }
 .banner .buttonBanner {
   border: none;
@@ -107,7 +65,7 @@ body {
   cursor: pointer;
 }
 .banner .buttonBanner:hover {
-  box-shadow: 1px 1px 20px #02afc6;
+  box-shadow: 1px 1px 25px #abdc6a;
 }
 .banner .buttonBanner .apiLink {
   outline: none;
@@ -131,6 +89,7 @@ body {
   font-size: 1.3rem;
   color: #02afc6;
   margin-right: 10px;
+  font-weight: bold;
 }
 .searchboxContainer .searchInput {
   border: none;
@@ -144,13 +103,38 @@ body {
 .searchboxContainer .searchInput:focus {
   outline: none;
   border: 1px solod #abdc6a;
-  box-shadow: 1px 1px 20px #abdc6a;
+  box-shadow: 1px 1px 25px #abdc6a;
+}
+
+.filterButton {
+  outline: none;
+  border: 1px solid #6b6767;
+  border-radius: 15px;
+  background-color: #abdc6a;
+  color: #02afc6;
+  padding: 8px;
+  margin-top: 0;
+  margin-right: 3px;
+  display: inline-block;
+  justify-content: space-around;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100px;
+  padding: 10px;
+  font-size: 1.3rem;
+  margin-left: 15px;
+}
+.filterButton:hover {
+  box-shadow: 1px 1px 25px #abdc6a;
 }
 
 .userCard {
-  border: 1px solid #979797;
   border-radius: 12px;
-  height: 200px;
+  height: 240px;
   width: 600px;
   text-align: center;
   overflow: hidden;
@@ -158,40 +142,50 @@ body {
   text-align: center;
 }
 .userCard:hover {
-  box-shadow: 1px 1px 20px #02afc6;
+  box-shadow: 1px 1px 25px #02afc6;
+  transform: scale(1.1);
+  transition: all 500ms;
+}
+.userCard .userCardImage {
+  min-width: 220px;
+  width: 220px;
+  height: 240px;
+  border-radius: 2px;
 }
 .userCard .userCardTextContainer {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-bottom: 10px;
+  padding: 100px;
+  background: rgb(60, 62, 68);
 }
-.userCard .userCardImage {
-  min-width: 220px;
-  width: 220px;
-  height: 200px;
-  border-radius: 2px;
-}
-.userCard .userCardUsername {
+.userCard .userCardTextContainer .userCardUsername {
   margin: 0;
-  padding-top: 8px;
+  padding-top: 2px;
   color: #02afc6;
-  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.userCard .userCardTextContainer .userCardUsername:hover {
+  color: #02afc6;
+}
+.userCard .userCardTextContainer .infoContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  text-align: center;
   padding-bottom: 10px;
 }
-.userCard .userCardUsername:hover {
-  color: #02afc6;
-}
-.userCard .userCardText {
+.userCard .userCardTextContainer .infoContainer .userCardText {
   color: #abdc6a;
-  padding-left: 20px;
 }
-.userCard .userCardTextValue {
+.userCard .userCardTextContainer .infoContainer .userCardTextValue {
   color: white;
-  padding-left: 20px;
   padding-bottom: 10px;
 }
 
@@ -202,6 +196,17 @@ body {
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 40px;
+}
+
+.searchFilterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cardFilterContainer {
+  display: flex;
 }
 
 .paginationContainer {
@@ -220,8 +225,6 @@ body {
   padding: 8px;
   margin-top: 0;
   margin-right: 3px;
-  min-width: 30px;
-  max-width: 35px;
   display: inline-block;
   justify-content: space-around;
   text-align: center;
@@ -230,4 +233,6 @@ body {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+  min-width: 30px;
+  max-width: 35px;
 }/*# sourceMappingURL=index.css.map */
