@@ -1,6 +1,4 @@
-import React from "react";
-
-const FilterButton = ({ onClick }) => {
+export const FilterButton = ({ onClick }) => {
   return (
     <>
       <button onClick={onClick} className="filterButton">
@@ -9,5 +7,3 @@ const FilterButton = ({ onClick }) => {
     </>
   );
 };
-
-export default FilterButton;

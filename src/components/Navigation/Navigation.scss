@@ -1,4 +1,4 @@
-@import "mixins";
+@import '../../css/variables';
 
 .banner {
   height: 100vh;
@@ -7,13 +7,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../img/background.jpg) no-repeat center center fixed;
+  background: url(../../assets/background.jpg) no-repeat center center fixed;
   background-size: cover;
 
   .navbarContainer {
     display: flex;
     justify-content: space-around;
     text-align: center;
+
     .navbarButtons {
       outline: none;
       border: none;
@@ -24,10 +25,14 @@
       margin-top: 0;
       margin-right: 20px;
       width: 100px;
-      font-family: "Urbanist", sans-serif;
+      font-family: 'Urbanist', sans-serif;
       font-size: 1.6rem;
       font-weight: bold;
       text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       cursor: pointer;
 
       &:hover {
@@ -46,11 +51,10 @@
     border-radius: 15px;
     background-color: $secondary-color;
     color: $primary-color;
-    padding: 15px;
+    padding: 10px;
     margin-top: 15px;
     min-width: 100px;
-    font-family: "Urbanist", sans-serif;
-    font-size: 2rem;
+    font-family: 'Urbanist', sans-serif;
     font-weight: bold;
     outline: none;
     text-decoration: none;
@@ -64,10 +68,49 @@
       outline: none;
       background-color: $secondary-color;
       color: $primary-color;
-      font-family: "Urbanist", sans-serif;
-      font-size: 2rem;
+      font-family: 'Urbanist', sans-serif;
+      font-size: 1.8rem;
       font-weight: bold;
       text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .banner {
+    .navbarContainer {
+      .navbarButtons {
+        padding: 6px;
+        font-size: 1.4rem;
+      }
+    }
+    .header {
+      font-size: 2rem;
+    }
+    .buttonBanner {
+      padding: 10px;
+      .apiLink {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  .banner {
+    .navbarContainer {
+      .navbarButtons {
+        padding: 6px;
+      }
+    }
+    .header {
+      font-size: 2.5rem;
+    }
+    .buttonBanner {
+      padding: 10px;
+      .apiLink {
+        font-size: 1.6rem;
+      }
     }
   }
 }
