@@ -1,6 +1,6 @@
 @import '../../css/variables';
 
-.searchboxContainer {
+.searchbox-container {
   margin-top: 50px;
   margin-bottom: 50px;
   display: flex;
@@ -8,13 +8,13 @@
   align-items: center;
   text-align: center;
 
-  .labelSearch {
+  .label-search {
     font-size: 1.3rem;
     color: $primary-color;
     margin-right: 10px;
     font-weight: bold;
   }
-  .searchInput {
+  .input-search {
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -32,22 +32,22 @@
 }
 
 @media (max-width: 375px) {
-  .searchboxContainer {
-    .labelSearch {
+  .searchbox-container {
+    .label-search {
       font-size: 1.1rem;
     }
-    .searchInput {
+    .input-search {
       width: 190px;
     }
   }
 }
 
 @media (min-width: 376px) and (max-width: 768px) {
-  .searchboxContainer {
-    .labelSearch {
+  .searchbox-container {
+    .label-search {
       font-size: 1.3rem;
     }
-    .searchInput {
+    .input-search {
       width: 240px;
     }
   }

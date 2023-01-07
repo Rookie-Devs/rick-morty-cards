@@ -1,12 +1,12 @@
 @import '../../css/variables';
 @import '../../css/mixins';
 
-.filterButton {
+.toggle-filter-button {
   @include defaultButton;
   min-width: 7%;
   padding: 10px;
   font-size: 1.3rem;
-  margin-left: 15px;
+  margin-left: 10px;
 
   &:hover {
     box-shadow: 1px 1px 25px $secondary-color;
@@ -14,14 +14,14 @@
 }
 
 @media (max-width: 400px) {
-  .filterButton {
+  .toggle-filter-button {
     min-width: 10%;
     font-size: 1.1rem;
   }
 }
 
 @media (min-width: 401px) and (max-width: 700px) {
-  .filterButton {
+  .toggle-filter-button {
     min-width: 15%;
   }
 }

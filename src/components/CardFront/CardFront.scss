@@ -1,0 +1,62 @@
+@import '../../css/variables';
+@import '../../css/mixins';
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  .card-front {
+    border-radius: 12px;
+    min-height: 280px;
+    width: 600px;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    background: rgb(60, 62, 68);
+
+    &:hover {
+      box-shadow: 1px 1px 25px $primary-color;
+    }
+
+    .card-image {
+      min-width: 50%;
+      min-height: 80%;
+      border-radius: 2px;
+    }
+
+    .card-info-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+
+      .card-username {
+        margin: 0 auto;
+        padding-top: 2px;
+        color: $primary-color;
+        font-size: 1.5rem;
+        text-align: center;
+        align-self: center;
+        margin-bottom: 40px;
+      }
+
+      .card-username-compact {
+        font-size: 1.2rem;
+      }
+
+      .card-button-info {
+        @include defaultButton;
+        min-width: 80px;
+        padding: 0.5em 0.2em;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

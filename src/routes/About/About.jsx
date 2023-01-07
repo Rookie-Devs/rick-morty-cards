@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { AboutInfo } from '../../components/AboutInfo/AboutInfo';
+import { Authors } from '../../components/Authors/Authors';
 import emerson from '../../assets/emerson.jpg';
 import joao from '../../assets/joao.jpg';
 import './About.scss';
@@ -9,13 +9,13 @@ export const About = () => {
     <>
       <h2 className="introduction">Project developed by</h2>
       <section className="profiles">
-        <AboutInfo
+        <Authors
           name="João Vitor"
           image={joao}
           linkedin="https://www.linkedin.com/in/joao-vitor-felix/"
           github="https://github.com/joao-vitor-felix/"
         />
-        <AboutInfo
+        <Authors
           name="Emerson Paiva"
           image={emerson}
           linkedin="https://www.linkedin.com/in/emerson-paiva/"

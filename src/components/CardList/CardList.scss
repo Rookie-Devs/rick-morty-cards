@@ -1,0 +1,15 @@
+.card {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

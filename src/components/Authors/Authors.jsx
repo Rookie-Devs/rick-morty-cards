@@ -1,7 +1,7 @@
 import { SocialIcon } from 'react-social-icons';
-import './AboutInfo.scss';
+import './Authors.scss';
 
-export const AboutInfo = ({ linkedin, github, name, image }) => {
+export const Authors = ({ linkedin, github, name, image }) => {
   return (
     <section className="container">
       <div className="profile-container">

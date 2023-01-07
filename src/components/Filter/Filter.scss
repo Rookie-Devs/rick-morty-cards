@@ -26,18 +26,19 @@
 
     .filter-button {
       @include defaultButton;
-      min-width: 40px;
-      margin-bottom: 3px;
+      min-width: 60px;
+      padding: 8px;
+      margin-right: 4px;
       font-size: 1.1rem;
-
-      &:active {
-        color: $secondary-color;
-        background-color: $primary-color;
-      }
 
       &:hover {
         box-shadow: 1px 1px 25px $secondary-color;
       }
+    }
+
+    .selected {
+      color: $secondary-color;
+      background-color: $primary-color;
     }
   }
 }

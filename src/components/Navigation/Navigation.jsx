@@ -11,22 +11,22 @@ export const Navigation = () => {
   return (
     <>
       <section className="banner">
-        <nav className="navbarContainer">
-          <Link to="/" className="navbarButtons" onClick={backToMiddle}>
+        <nav className="navbar-container">
+          <Link to="/" className="navbar-buttons" onClick={backToMiddle}>
             Home
           </Link>
-          <Link to="/about" className="navbarButtons" onClick={backToMiddle}>
+          <Link to="/about" className="navbar-buttons" onClick={backToMiddle}>
             About
           </Link>
         </nav>
         <h1 className="header">
           This application uses the{' '}
-          <span className="rickMorty">Rick and Morty API</span>
+          <span className="rick-morty">Rick and Morty API</span>
         </h1>
-        <button className="buttonBanner">
+        <button className="button-banner">
           <a
             href="https://rickandmortyapi.com/"
-            className="apiLink"
+            className="api-button"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,12 +1,12 @@
 @import '../../css/variables';
 @import '../../css/mixins';
 
-.paginationContainer {
+.pagination-container {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 20px;
+  height: 10vh;
 
   li {
     outline: none;
@@ -26,9 +26,9 @@
     min-width: 40px;
     cursor: pointer;
 
-    .selected {
-      outline: none;
-      border: none;
+    a {
+      display: block;
+      min-width: 30px;
     }
   }
 }

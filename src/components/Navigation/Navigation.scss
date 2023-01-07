@@ -10,12 +10,12 @@
   background: url(../../assets/background.jpg) no-repeat center center fixed;
   background-size: cover;
 
-  .navbarContainer {
+  .navbar-container {
     display: flex;
     justify-content: space-around;
     text-align: center;
 
-    .navbarButtons {
+    .navbar-buttons {
       outline: none;
       border: none;
       border-radius: 15px;
@@ -24,7 +24,7 @@
       padding: 8px;
       margin-top: 0;
       margin-right: 20px;
-      width: 100px;
+      width: 100%;
       font-family: 'Urbanist', sans-serif;
       font-size: 1.6rem;
       font-weight: bold;
@@ -46,7 +46,7 @@
     color: white;
   }
 
-  .buttonBanner {
+  .button-banner {
     border: none;
     border-radius: 15px;
     background-color: $secondary-color;
@@ -64,7 +64,7 @@
       box-shadow: 1px 1px 25px $secondary-color;
     }
 
-    .apiLink {
+    .api-button {
       outline: none;
       background-color: $secondary-color;
       color: $primary-color;
@@ -78,8 +78,8 @@
 
 @media (max-width: 375px) {
   .banner {
-    .navbarContainer {
-      .navbarButtons {
+    .navbar-container {
+      .navbar-buttons {
         padding: 6px;
         font-size: 1.4rem;
       }
@@ -87,9 +87,9 @@
     .header {
       font-size: 2rem;
     }
-    .buttonBanner {
+    .button-banner {
       padding: 10px;
-      .apiLink {
+      .api-button {
         font-size: 1.4rem;
       }
     }
@@ -98,17 +98,17 @@
 
 @media (min-width: 376px) and (max-width: 768px) {
   .banner {
-    .navbarContainer {
-      .navbarButtons {
+    .navbar-container {
+      .nnavbar-buttons {
         padding: 6px;
       }
     }
     .header {
       font-size: 2.5rem;
     }
-    .buttonBanner {
+    .button-banner {
       padding: 10px;
-      .apiLink {
+      .api-button {
         font-size: 1.6rem;
       }
     }
