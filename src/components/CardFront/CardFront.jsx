@@ -1,6 +1,6 @@
 import './CardFront.scss';
 
-export const CardFront = ({ data, setOpenModal }) => {
+export const CardFront = ({ data, handleShowModal }) => {
   return (
     <div className="card-list">
       {data.map(card => (
@@ -16,7 +16,7 @@ export const CardFront = ({ data, setOpenModal }) => {
             </h3>
             <button
               className="card-button-info"
-              onClick={() => setOpenModal(true)}
+              onClick={() => handleShowModal(card.id)}
             >
               Details
             </button>

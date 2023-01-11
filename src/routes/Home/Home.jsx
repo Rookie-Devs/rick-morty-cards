@@ -14,7 +14,7 @@ import {
 
 import './Home.scss';
 
-const initialParams = {
+const INITIAL_STATE = {
   pages: 1,
   name: '',
   status: '',
@@ -41,12 +41,21 @@ export const Home = () => {
 
   const navigate = useNavigate();
 
-  const [params, dispatch] = useReducer(paramsReducer, {
-    ...initialParams,
-  });
+  const [{ pages, name, status, gender }, dispatch] = useReducer(
+    paramsReducer,
+    {
+      ...INITIAL_STATE,
+    }
+  );
   const [showFilter, setShowFilter] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [idToShow, setIdToShow] = useState(null);
   const [search, setSearch] = useState('');
+
+  const handleShowModal = id => {
+    setOpenModal(true);
+    setIdToShow(id);
+  };
 
   const setStatus = newStatus => {
     dispatch({ type: 'SET_STATUS', payload: newStatus });
@@ -68,12 +77,12 @@ export const Home = () => {
 
   useEffect(() => {
     navigate('/page/1');
-  }, [params.name, params.status, params.gender]);
+  }, [name, status, gender]);
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?page=${page}&name=${params.name}&status=${params.status}&gender=${params.gender}`
+        `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
       );
       const result = await response.json();
 
@@ -85,7 +94,7 @@ export const Home = () => {
   };
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['cards', page, params.name, params.status, params.gender],
+    queryKey: ['cards', page, name, status, gender],
     queryFn: fetchData,
     refetchOnWindowFocus: false,
     initialData: [],
@@ -100,9 +109,9 @@ export const Home = () => {
         <FilterButton onClick={() => setShowFilter(!showFilter)} />
         {showFilter && (
           <Filter
-            status={params.status}
+            status={status}
             setStatus={setStatus}
-            gender={params.gender}
+            gender={gender}
             setGender={setGender}
           />
         )}
@@ -111,38 +120,21 @@ export const Home = () => {
       {error && (
         <div className="error">An error has occurred: {error.message}</div>
       )}
-      <CardFront data={data} setOpenModal={setOpenModal} />
+      <CardFront
+        data={data}
+        setOpenModal={setOpenModal}
+        handleShowModal={handleShowModal}
+      />
       {openModal && (
         <CardBack
           data={data}
           openModal={openModal}
           setOpenModal={setOpenModal}
+          idToShow={idToShow}
         />
       )}
-      <Pagination pages={params.pages} page={page} />
+      <Pagination pages={pages} page={page} />
       <ButtonBackToTop />
     </div>
   );
 };
-
-// useEffect(() => {
-//   const delayfetchData = setTimeout(() => {
-//     const fetchData = async () => {
-//       const response = await fetch(
-//         `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}`
-//       );
-//       const result = await response.json();
-
-//       setData(result.results ?? []);
-//       setPages(result.info.pages ?? 0);
-//     };
-//     fetchData();
-//   }, 400);
-
-//   return () => clearTimeout(delayfetchData);
-// }, [page, search, status, gender]);
-
-// const debounceFetchData = setTimeout(() => {
-
-//   return () => clearTimeout(debounceFetchData);
-// }, 400);

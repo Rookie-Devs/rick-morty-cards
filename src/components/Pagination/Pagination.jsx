@@ -6,11 +6,10 @@ export const Pagination = ({ pages = [] }) => {
   const navigate = useNavigate();
 
   const handlePageClick = event => {
+    navigate(`/page/${event.selected + 1}`);
     scrollTo({
       top: 650,
-      behavior: 'smooth',
     });
-    navigate(`/page/${event.selected + 1}`);
   };
 
   return (
