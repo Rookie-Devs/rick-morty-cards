@@ -10,9 +10,10 @@ import {
   CardBack,
   Pagination,
   ButtonBackToTop,
+  CardList,
 } from '../../components';
 
-import './Home.scss';
+import { SearchFilter, Loading, Error } from './Home.styles';
 
 const INITIAL_STATE = {
   pages: 1,
@@ -48,14 +49,7 @@ export const Home = () => {
     }
   );
   const [showFilter, setShowFilter] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
-  const [idToShow, setIdToShow] = useState(null);
   const [search, setSearch] = useState('');
-
-  const handleShowModal = id => {
-    setOpenModal(true);
-    setIdToShow(id);
-  };
 
   const setStatus = newStatus => {
     dispatch({ type: 'SET_STATUS', payload: newStatus });
@@ -93,7 +87,7 @@ export const Home = () => {
     }
   };
 
-  const { data, isLoading, error } = useQuery({
+  const { data, error, fetchStatus } = useQuery({
     queryKey: ['cards', page, name, status, gender],
     queryFn: fetchData,
     refetchOnWindowFocus: false,
@@ -103,8 +97,8 @@ export const Home = () => {
   });
 
   return (
-    <div className="container">
-      <div className="search-filter-container">
+    <>
+      <SearchFilter>
         <Searchbox search={search} setSearch={setSearch} />
         <FilterButton onClick={() => setShowFilter(!showFilter)} />
         {showFilter && (
@@ -115,26 +109,13 @@ export const Home = () => {
             setGender={setGender}
           />
         )}
-      </div>
-      {isLoading && <div className="loading">Loading...</div>}
-      {error && (
-        <div className="error">An error has occurred: {error.message}</div>
-      )}
-      <CardFront
-        data={data}
-        setOpenModal={setOpenModal}
-        handleShowModal={handleShowModal}
-      />
-      {openModal && (
-        <CardBack
-          data={data}
-          openModal={openModal}
-          setOpenModal={setOpenModal}
-          idToShow={idToShow}
-        />
-      )}
+      </SearchFilter>
+      {fetchStatus === 'fetching' && <Loading>Loading...</Loading>}
+      {error && <Error>An error has occurred: {error.message}</Error>}
+
+      <CardList data={data} />
       <Pagination pages={pages} page={page} />
       <ButtonBackToTop />
-    </div>
+    </>
   );
 };

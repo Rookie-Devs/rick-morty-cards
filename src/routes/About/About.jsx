@@ -1,14 +1,13 @@
-import { Link } from 'react-router-dom';
 import { Authors } from '../../components/Authors/Authors';
 import emerson from '../../assets/emerson.jpg';
 import joao from '../../assets/joao.jpg';
-import './About.scss';
+import { Introduction, Profiles, Button } from './About.styles';
 
 export const About = () => {
   return (
     <>
-      <h2 className="introduction">Project developed by</h2>
-      <section className="profiles">
+      <Introduction>Project developed by</Introduction>
+      <Profiles>
         <Authors
           name="João Vitor"
           image={joao}
@@ -21,10 +20,8 @@ export const About = () => {
           linkedin="https://www.linkedin.com/in/emerson-paiva/"
           github="https://github.com/emerson-paiva/"
         />
-      </section>
-      <Link to="/" className="home-button">
-        Back to Home
-      </Link>
+      </Profiles>
+      <Button to="/">Back to Home</Button>
     </>
   );
 };

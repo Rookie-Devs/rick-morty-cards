@@ -1,10 +1,6 @@
-.card {
-  position: relative;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
+import styled from 'styled-components';
 
-.card-list {
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,4 +8,4 @@
   gap: 36px;
   margin-top: 20px;
   margin-bottom: 30px;
-}
+`;

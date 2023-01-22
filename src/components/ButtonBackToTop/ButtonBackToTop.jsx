@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUpCircleIcon } from '@heroicons/react/24/solid';
-import './ButtonBackToTop.scss';
+import { useState, useEffect } from 'react';
+
+import { Button } from './ButtonBackToTop.styles.jsx';
 
 export const ButtonBackToTop = () => {
   const [backToTopButton, setBackToTopButton] = useState(false);
@@ -23,10 +23,7 @@ export const ButtonBackToTop = () => {
   return (
     <>
       {backToTopButton && (
-        <ArrowUpCircleIcon
-          className="button-back-to-top"
-          onClick={handleClick}
-        />
+        <Button className="button-back-to-top" onClick={handleClick} />
       )}
     </>
   );

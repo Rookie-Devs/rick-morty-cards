@@ -1,12 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Home } from './routes/Home/Home';
-import { About } from './routes/About/About';
-import { Navigation } from './components/Navigation/Navigation';
+import { Home, About } from './routes/';
+import { Navigation } from './components';
+
+import { Theme } from './Theme';
+import { GlobalStyle } from './GlobalStyles';
 
 const App = () => {
   return (
-    <>
+    <Theme>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
@@ -14,7 +17,7 @@ const App = () => {
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
-    </>
+    </Theme>
   );
 };
 

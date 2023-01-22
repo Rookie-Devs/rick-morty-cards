@@ -1,7 +1,7 @@
-@import '../../css/variables';
-@import '../../css/mixins';
+import styled from 'styled-components';
+import ReactPaginate from 'react-paginate';
 
-.pagination-container {
+export const Paginate = styled(ReactPaginate)`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -11,8 +11,8 @@
   li {
     outline: none;
     border-radius: 20px;
-    background-color: $secondary-color;
-    color: $primary-color;
+    background-color: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.primary};
     padding: 8px;
     margin-top: 0;
     margin-right: 3px;
@@ -31,4 +31,4 @@
       min-width: 30px;
     }
   }
-}
+`;

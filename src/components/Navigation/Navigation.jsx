@@ -1,5 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
-import './Navigation.scss';
+import { Outlet } from 'react-router-dom';
+import {
+  Banner,
+  Container,
+  Button,
+  Header,
+  ButtonBanner,
+  ApiButton,
+} from './Navigation.styles.jsx';
 
 export const Navigation = () => {
   const backToMiddle = () => {
@@ -10,30 +17,29 @@ export const Navigation = () => {
   };
   return (
     <>
-      <section className="banner">
-        <nav className="navbar-container">
-          <Link to="/" className="navbar-buttons" onClick={backToMiddle}>
+      <Banner>
+        <Container>
+          <Button to="/" onClick={backToMiddle}>
             Home
-          </Link>
-          <Link to="/about" className="navbar-buttons" onClick={backToMiddle}>
+          </Button>
+          <Button to="/about" onClick={backToMiddle}>
             About
-          </Link>
-        </nav>
-        <h1 className="header">
+          </Button>
+        </Container>
+        <Header>
           This application uses the{' '}
           <span className="rick-morty">Rick and Morty API</span>
-        </h1>
-        <button className="button-banner">
-          <a
+        </Header>
+        <ButtonBanner>
+          <ApiButton
             href="https://rickandmortyapi.com/"
-            className="api-button"
             target="_blank"
             rel="noreferrer"
           >
             Check the API out
-          </a>
-        </button>
-      </section>
+          </ApiButton>
+        </ButtonBanner>
+      </Banner>
       <Outlet />
     </>
   );

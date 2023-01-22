@@ -8,3 +8,4 @@ export * from './CardFront/CardFront';
 export * from './CardBack/CardBack';
 export * from './CardList/CardList';
 export * from './ButtonBackToTop/ButtonBackToTop';
+export * from './RenderCard/RenderCard';

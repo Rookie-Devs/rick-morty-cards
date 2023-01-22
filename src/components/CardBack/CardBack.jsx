@@ -1,80 +1,74 @@
-import './CardBack.scss';
+import {
+  ModalBackground,
+  Cardback,
+  InfoContainer,
+  Name,
+  Info,
+  Block,
+  Text,
+  Value,
+  ModalButton,
+} from './CardBack.styles';
 
-//TODO: REFATORAR
-
-export const CardBack = ({ data, openModal, setOpenModal, idToShow }) => {
-  if (openModal) {
-    console.log({ data });
+export const CardBack = ({
+  showBack,
+  name,
+  status,
+  species,
+  origin,
+  type,
+  location,
+  episodes,
+  gender,
+  id,
+  setShowBack,
+}) => {
+  if (showBack) {
     return (
-      <>
-        {data
-          .filter(card => card.id === idToShow)
-          .map(card => (
-            <div
-              className="card-modal-background"
-              key={card.id}
-              onClick={() => setOpenModal(!openModal)}
+      <ModalBackground key={id} onClick={() => setShowBack(!showBack)}>
+        <Cardback onClick={e => e.stopPropagation()}>
+          <InfoContainer>
+            <Name name={name}>{name}</Name>
+            <Info>
+              <Block>
+                <Text>Status</Text>
+                <Value>{status}</Value>
+              </Block>
+              <Block>
+                <Text>Species</Text>
+                <Value>{species}</Value>
+              </Block>
+              <Block>
+                <Text>Origin</Text>
+                <Value>{origin.name}</Value>
+              </Block>
+              <Block>
+                <Text>Type</Text>
+                <Value>{type === '' ? 'Unknown' : type}</Value>
+              </Block>
+              <Block>
+                <Text>Gender</Text>
+                <Value>{gender}</Value>
+              </Block>
+              <Block>
+                <Text>Location</Text>
+                <Value>{location}</Value>
+              </Block>
+              <Block>
+                <Text>Have appeared at</Text>
+                <Value>{episodes.length + ' episodes'}</Value>
+              </Block>
+            </Info>
+            <ModalButton
+              onClick={() => {
+                setShowBack(!showBack);
+              }}
             >
-              <div className="card-back" onClick={e => e.stopPropagation()}>
-                <div className="card-info-container">
-                  <h3
-                    className={`card-username ${
-                      card.name.length > 20 ? 'card-username-compact' : ''
-                    }`}
-                  >
-                    {card.name}
-                  </h3>
-                  <div className="card-info">
-                    <div className="card-info-block">
-                      <span className="card-text">Status</span>
-                      <span className="card-text-value">{card.status}</span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Species</span>
-                      <span className="card-text-value">{card.species}</span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Origin</span>
-                      <span className="card-text-value">
-                        {card.origin.name}
-                      </span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Type</span>
-                      <span className="card-text-value">
-                        {card.type === '' ? 'Unknown' : card.type}
-                      </span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Gender</span>
-                      <span className="card-text-value">{card.gender}</span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Location</span>
-                      <span className="card-text-value">
-                        {card.location.name}
-                      </span>
-                    </div>
-                    <div className="card-info-block">
-                      <span className="card-text">Have appeared at</span>
-                      <span className="card-text-value">
-                        {card.episode.length + ' episodes'}
-                      </span>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setOpenModal(!openModal);
-                    }}
-                    className="card-button-info"
-                  >
-                    Close Modal
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-      </>
+              Close Modal
+            </ModalButton>
+          </InfoContainer>
+        </Cardback>
+      </ModalBackground>
     );
   } else return null;
 };

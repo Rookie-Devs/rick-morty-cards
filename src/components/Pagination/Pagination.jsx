@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import ReactPaginate from 'react-paginate';
-import './Pagination.scss';
+
+import { Paginate } from './Pagination.styles';
 
 export const Pagination = ({ pages = [] }) => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const Pagination = ({ pages = [] }) => {
   };
 
   return (
-    <ReactPaginate
+    <Paginate
       breakLabel="..."
       nextLabel="next"
       onPageChange={handlePageClick}
@@ -21,7 +21,6 @@ export const Pagination = ({ pages = [] }) => {
       pageCount={pages}
       previousLabel="previous"
       renderOnZeroPageCount={null}
-      className="pagination-container"
     />
   );
 };

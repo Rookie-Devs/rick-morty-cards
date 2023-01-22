@@ -1,26 +1,27 @@
-@import '../../css/variables';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-.introduction {
+export const Introduction = styled.h2`
   color: white;
   font-size: 2rem;
   text-align: center;
   margin-top: 30px;
-}
+`;
 
-.profiles {
+export const Profiles = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
   height: 60vh;
-}
+`;
 
-.home-button {
+export const Button = styled(Link)`
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: $secondary-color;
-  color: $primary-color;
+  background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.primary};
   padding: 8px;
   width: 180px;
   font-family: 'Urbanist', sans-serif;
@@ -34,6 +35,6 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow: 1px 1px 25px $secondary-color;
+    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
   }
-}
+`;

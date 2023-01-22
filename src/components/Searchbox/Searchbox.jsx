@@ -1,4 +1,4 @@
-import './Searchbox.scss';
+import { Container, Search, Input } from './Searchbox.styles';
 
 export const Searchbox = ({ search, setSearch }) => {
   const searchboxFilter = event => {
@@ -7,18 +7,15 @@ export const Searchbox = ({ search, setSearch }) => {
   };
 
   return (
-    <div className="searchbox-container">
-      <label htmlFor="search" className="label-search">
-        Search
-      </label>
-      <input
+    <Container>
+      <Search htmlFor="search">Search</Search>
+      <Input
         type="search"
         placeholder="Search here"
-        className="input-search"
         id="search"
         value={search}
         onChange={searchboxFilter}
-      ></input>
-    </div>
+      ></Input>
+    </Container>
   );
 };
