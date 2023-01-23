@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { css } from 'styled-components';
 import { Button } from '../FilterButton/FilterButton.styles';
 
 export const Container = styled.div`
@@ -36,54 +37,12 @@ export const FilterButton = styled(Button)`
     box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
   }
 
-  ${props => {
-    switch (props.status) {
-      case 'alive':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      case 'dead':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      case 'unknown':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      default:
-        return null;
-    }
-  }}
-
-  ${props => {
-    switch (props.gender) {
-      case 'female':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      case 'male':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      case 'genderless':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      case 'unknown':
-        return `
-          color: ${props.theme.colors.secondary};
-          background-color: ${props.theme.colors.primary};
-        `;
-      default:
-        return null;
-    }
-  }}
+  ${props =>
+    props.isActive &&
+    css`
+      color: ${props => props.theme.colors.secondary};
+      background-color: ${props => props.theme.colors.primary};
+    `}
 `;
 
 // @media (max-width: 375px) {

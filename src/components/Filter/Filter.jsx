@@ -10,29 +10,50 @@ export const Filter = ({ status, setStatus, gender, setGender }) => {
     <Container>
       <Value>Status</Value>
       <ButtonContainer>
-        <FilterButton status={status} onClick={() => setStatus('alive')}>
+        <FilterButton
+          isActive={status === 'alive'}
+          onClick={() => setStatus('alive')}
+        >
           Alive
         </FilterButton>
-        <FilterButton status={status} onClick={() => setStatus('dead')}>
+        <FilterButton
+          isActive={status === 'dead'}
+          onClick={() => setStatus('dead')}
+        >
           Dead
         </FilterButton>
-        <FilterButton status={status} onClick={() => setStatus('unknown')}>
+        <FilterButton
+          isActive={status === 'unknown'}
+          onClick={() => setStatus('unknown')}
+        >
           Unknown
         </FilterButton>
         <FilterButton onClick={() => setStatus('')}>Clear</FilterButton>
       </ButtonContainer>
       <Value>Gender</Value>
       <ButtonContainer>
-        <FilterButton gender={gender} onClick={() => setGender('female')}>
+        <FilterButton
+          isActive={gender === 'female'}
+          onClick={() => setGender('female')}
+        >
           Female
         </FilterButton>
-        <FilterButton gender={gender} onClick={() => setGender('male')}>
+        <FilterButton
+          isActive={gender === 'male'}
+          onClick={() => setGender('male')}
+        >
           Male
         </FilterButton>
-        <FilterButton gender={gender} onClick={() => setGender('genderless')}>
+        <FilterButton
+          isActive={gender === 'genderless'}
+          onClick={() => setGender('genderless')}
+        >
           Genderless
         </FilterButton>
-        <FilterButton gender={gender} onClick={() => setGender('unknown')}>
+        <FilterButton
+          isActive={gender === 'unknown'}
+          onClick={() => setGender('unknown')}
+        >
           Unknown
         </FilterButton>
         <FilterButton onClick={() => setGender('')}>Clear</FilterButton>
