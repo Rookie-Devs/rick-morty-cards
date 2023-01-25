@@ -26,7 +26,7 @@ export const ButtonBackToTop = () => {
 
   return (
     <>
-      {showButton && <Button showButton={showButton} onClick={handleClick} />}
+      <Button showButton={showButton} onClick={handleClick} />
     </>
   );
 };

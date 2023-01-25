@@ -3,7 +3,7 @@ import { Container } from './CardList.styles.jsx';
 
 export const CardList = ({ data }) => {
   return (
-    <Container>
+    <Container key={data.id}>
       {data.map(item => (
         <RenderCard item={item} key={item.id} />
       ))}

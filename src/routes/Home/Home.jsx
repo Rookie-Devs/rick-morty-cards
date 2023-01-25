@@ -1,6 +1,7 @@
 import { useState, useEffect, useReducer } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 import {
   Searchbox,
@@ -13,6 +14,13 @@ import {
 
 import { SearchFilter, Loading, Error } from './Home.styles';
 
+const ACTIONS_TYPES = {
+  SET_PAGES: 'SET_PAGES',
+  SET_NAME: 'SET_NAME',
+  SET_STATUS: 'SET_STATUS',
+  SET_GENDER: 'SET_GENDER',
+};
+
 const INITIAL_STATE = {
   pages: 1,
   name: '',
@@ -22,13 +30,13 @@ const INITIAL_STATE = {
 
 const paramsReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_PAGES':
+    case ACTIONS_TYPES.SET_PAGES:
       return { ...state, pages: action.payload };
-    case 'SET_NAME':
+    case ACTIONS_TYPES.SET_NAME:
       return { ...state, name: action.payload };
-    case 'SET_STATUS':
+    case ACTIONS_TYPES.SET_STATUS:
       return { ...state, status: action.payload };
-    case 'SET_GENDER':
+    case ACTIONS_TYPES.SET_GENDER:
       return { ...state, gender: action.payload };
     default:
       return state;
@@ -42,24 +50,29 @@ export const Home = () => {
 
   const [{ pages, name, status, gender }, dispatch] = useReducer(
     paramsReducer,
-    {
-      ...INITIAL_STATE,
-    }
+    INITIAL_STATE
   );
   const [showFilter, setShowFilter] = useState(false);
   const [search, setSearch] = useState('');
 
+  const handleNavigate = () => navigate('/page/1');
+
   const setStatus = newStatus => {
-    dispatch({ type: 'SET_STATUS', payload: newStatus });
+    handleNavigate();
+    dispatch({ type: ACTIONS_TYPES.SET_STATUS, payload: newStatus });
   };
 
   const setGender = newGender => {
-    dispatch({ type: 'SET_GENDER', payload: newGender });
+    handleNavigate();
+    dispatch({ type: ACTIONS_TYPES.SET_GENDER, payload: newGender });
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch({ type: 'SET_NAME', payload: search });
+      if (search) {
+        handleNavigate();
+      }
+      dispatch({ type: ACTIONS_TYPES.SET_NAME, payload: search });
     }, 400);
 
     return () => {
@@ -67,22 +80,15 @@ export const Home = () => {
     };
   }, [search]);
 
-  useEffect(() => {
-    navigate('/page/1');
-  }, [name, status, gender]);
-
   const fetchData = async () => {
-    try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
-      );
-      const result = await response.json();
-
-      dispatch({ type: 'SET_PAGES', payload: result.info.pages ?? 0 });
-      return result.results ?? [];
-    } catch (error) {
-      return console.log(error.message);
-    }
+    const response = await axios(
+      `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
+    );
+    dispatch({
+      type: ACTIONS_TYPES.SET_PAGES,
+      payload: response.data.info.pages ?? 0,
+    });
+    return response.data.results ?? [];
   };
 
   const { data, error, fetchStatus } = useQuery({
@@ -110,7 +116,6 @@ export const Home = () => {
       </SearchFilter>
       {fetchStatus === 'fetching' && <Loading>Loading...</Loading>}
       {error && <Error>An error has occurred: {error.message}</Error>}
-
       <CardList data={data} />
       <Pagination pages={pages} page={page} />
       <ButtonBackToTop />
