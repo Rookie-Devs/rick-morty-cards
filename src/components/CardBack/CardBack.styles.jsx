@@ -34,10 +34,10 @@ export const InfoContainer = styled.div`
 export const Name = styled.h3`
   margin: 0;
   padding-top: 2px;
-  color: ${props => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: ${props => (props.name.length > 20 ? '1.2rem' : '1.5rem')};
+  font-size: ${({ name }) => (name.length > 20 ? '1.2rem' : '1.5rem')};
   text-align: center;
 `;
 
@@ -54,7 +54,7 @@ export const Block = styled.div`
 `;
 
 export const Text = styled.span`
-  color: ${props => props.theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: bold;
   font-size: 1.1rem;
 `;

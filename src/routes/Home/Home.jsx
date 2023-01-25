@@ -6,8 +6,6 @@ import {
   Searchbox,
   FilterButton,
   Filter,
-  CardFront,
-  CardBack,
   Pagination,
   ButtonBackToTop,
   CardList,

@@ -13,7 +13,7 @@ export const Loading = styled.div`
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  color: ${props => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Error = styled(Loading)``;

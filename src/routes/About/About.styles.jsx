@@ -20,8 +20,8 @@ export const Button = styled(Link)`
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   padding: 8px;
   width: 180px;
   font-family: 'Urbanist', sans-serif;
@@ -35,6 +35,6 @@ export const Button = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;

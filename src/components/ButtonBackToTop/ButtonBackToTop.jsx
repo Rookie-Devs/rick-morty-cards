@@ -3,17 +3,21 @@ import { useState, useEffect } from 'react';
 import { Button } from './ButtonBackToTop.styles.jsx';
 
 export const ButtonBackToTop = () => {
-  const [backToTopButton, setBackToTopButton] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  const handleScroll = () => {
+    if (scrollY > 1500) {
+      setShowButton(true);
+    } else setShowButton(false);
+  };
 
   useEffect(() => {
-    addEventListener('scroll', () => {
-      if (scrollY > 1500) {
-        setBackToTopButton(true);
-      } else setBackToTopButton(false);
-    });
+    addEventListener('scroll', handleScroll);
+
+    return () => removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleClick = event => {
+  const handleClick = () => {
     scrollTo({
       top: 650,
       behavior: 'smooth',
@@ -22,9 +26,7 @@ export const ButtonBackToTop = () => {
 
   return (
     <>
-      {backToTopButton && (
-        <Button className="button-back-to-top" onClick={handleClick} />
-      )}
+      {showButton && <Button showButton={showButton} onClick={handleClick} />}
     </>
   );
 };

@@ -4,8 +4,8 @@ export const Button = styled.button`
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   text-align: center;
   font-family: 'Urbanist', sans-serif;
   font-size: 1rem;
@@ -18,7 +18,7 @@ export const Button = styled.button`
   margin-left: 10px;
 
   &:hover {
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;
 

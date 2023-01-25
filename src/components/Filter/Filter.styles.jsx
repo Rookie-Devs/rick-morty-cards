@@ -14,7 +14,7 @@ export const Value = styled.span`
   font-size: 1.2rem;
   margin-bottom: 3px;
   font-weight: bold;
-  color: ${props => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
 
   &:last-of-type {
     margin-top: 8px;
@@ -34,14 +34,14 @@ export const FilterButton = styled(Button)`
   font-size: 1.1rem;
 
   &:hover {
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 
   ${props =>
     props.isActive &&
     css`
-      color: ${props => props.theme.colors.secondary};
-      background-color: ${props => props.theme.colors.primary};
+      color: ${({ theme }) => theme.colors.secondary};
+      background-color: ${({ theme }) => theme.colors.primary};
     `}
 `;
 

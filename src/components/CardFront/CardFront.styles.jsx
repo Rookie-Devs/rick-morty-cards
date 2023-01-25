@@ -11,7 +11,7 @@ export const CardFrontContainer = styled.div`
   background: rgb(60, 62, 68);
 
   &:hover {
-    box-shadow: 1px 1px 25px $primary-color;
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -32,7 +32,7 @@ export const Container = styled.div`
 export const Name = styled.h3`
   margin: 0 auto;
   padding-top: 2px;
-  color: ${props => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: ${props => (props.name.length > 20 ? '1.2rem' : '1.5rem')};
   text-align: center;
   align-self: center;

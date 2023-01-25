@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 export const Search = styled.label`
   font-size: 1.3rem;
-  color: ${props => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   margin-right: 10px;
   font-weight: bold;
 `;
@@ -26,8 +26,8 @@ export const Input = styled.input`
 
   &:focus {
     outline: none;
-    border: 1px solod ${props => props.theme.colors.secondary};
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;
 

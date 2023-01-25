@@ -40,7 +40,7 @@ export const CardBack = ({
               </Block>
               <Block>
                 <Text>Origin</Text>
-                <Value>{origin.name}</Value>
+                <Value>{origin === 'unknown' ? 'Unknown' : origin}</Value>
               </Block>
               <Block>
                 <Text>Type</Text>

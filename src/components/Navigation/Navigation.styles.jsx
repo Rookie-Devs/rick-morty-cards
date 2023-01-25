@@ -23,8 +23,8 @@ export const Button = styled(Link)`
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   padding: 8px;
   margin-top: 0;
   margin-right: 20px;
@@ -40,7 +40,7 @@ export const Button = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -52,8 +52,8 @@ export const Header = styled.h1`
 export const ButtonBanner = styled.button`
   border: none;
   border-radius: 15px;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   padding: 10px;
   margin-top: 15px;
   min-width: 100px;
@@ -64,14 +64,14 @@ export const ButtonBanner = styled.button`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 1px 1px 25px ${props => props.theme.colors.secondary};
+    box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;
 
 export const ApiButton = styled.a`
   outline: none;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
   font-family: 'Urbanist', sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
