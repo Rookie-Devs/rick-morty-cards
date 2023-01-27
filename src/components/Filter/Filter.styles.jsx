@@ -43,18 +43,8 @@ export const FilterButton = styled(Button)`
       color: ${({ theme }) => theme.colors.secondary};
       background-color: ${({ theme }) => theme.colors.primary};
     `}
+
+  @media (min-width: 300px) and (max-width: 600px) {
+    margin: 8px;
+  }
 `;
-
-// @media (max-width: 375px) {
-//   .filter-container {
-//     .span-filter {
-//       font-size: 1.1rem;
-//     }
-
-//     .filter-button-container {
-//       .filter-button {
-//         font-size: 1rem;
-//       }
-//     }
-//   }
-// }

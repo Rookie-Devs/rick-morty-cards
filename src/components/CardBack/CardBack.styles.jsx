@@ -23,6 +23,18 @@ export const Cardback = styled.div`
   display: flex;
   text-align: center;
   background: rgb(60, 62, 68);
+
+  @media (max-width: 400px) {
+    width: 360px;
+  }
+
+  @media (min-width: 400px) and (max-width: 500px) {
+    width: 410px;
+  }
+
+  @media (min-width: 500px) and (max-width: 700px) {
+    width: 500px;
+  }
 `;
 
 export const InfoContainer = styled.div`

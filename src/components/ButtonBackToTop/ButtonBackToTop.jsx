@@ -4,17 +4,30 @@ import { Button } from './ButtonBackToTop.styles.jsx';
 
 export const ButtonBackToTop = () => {
   const [showButton, setShowButton] = useState(false);
+  const [changePlace, setChangePlace] = useState(false);
 
   const handleScroll = () => {
-    if (scrollY > 1500) {
+    if (scrollY > 2800) {
       setShowButton(true);
     } else setShowButton(false);
+  };
+
+  const handleChangePlace = () => {
+    if (scrollY >= 6500) {
+      setChangePlace(true);
+    } else setChangePlace(false);
   };
 
   useEffect(() => {
     addEventListener('scroll', handleScroll);
 
     return () => removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    addEventListener('scroll', handleChangePlace);
+
+    return () => removeEventListener('scroll', handleChangePlace);
   }, []);
 
   const handleClick = () => {
@@ -26,7 +39,11 @@ export const ButtonBackToTop = () => {
 
   return (
     <>
-      <Button showButton={showButton} onClick={handleClick} />
+      <Button
+        changePlace={changePlace}
+        showButton={showButton}
+        onClick={handleClick}
+      />
     </>
   );
 };

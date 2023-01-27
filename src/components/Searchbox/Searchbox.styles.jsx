@@ -29,26 +29,12 @@ export const Input = styled.input`
     border: 1px solid ${({ theme }) => theme.colors.secondary};
     box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    width: 160px;
+  }
+
+  @media (min-width: 500px) and (max-width: 600px) {
+    width: 200px;
+  }
 `;
-
-// @media (max-width: 375px) {
-//   .searchbox-container {
-//     .label-search {
-//       font-size: 1.1rem;
-//     }
-//     .input-search {
-//       width: 190px;
-//     }
-//   }
-// }
-
-// @media (min-width: 376px) and (max-width: 768px) {
-//   .searchbox-container {
-//     .label-search {
-//       font-size: 1.3rem;
-//     }
-//     .input-search {
-//       width: 240px;
-//     }
-//   }
-// }

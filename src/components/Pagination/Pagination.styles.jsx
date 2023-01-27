@@ -14,8 +14,7 @@ export const Paginate = styled(ReactPaginate)`
     background-color: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.primary};
     padding: 8px;
-    margin-top: 0;
-    margin-right: 3px;
+    margin: 3px;
     display: inline-block;
     justify-content: space-around;
     text-align: center;
@@ -25,6 +24,10 @@ export const Paginate = styled(ReactPaginate)`
     text-decoration: none;
     min-width: 40px;
     cursor: pointer;
+
+    @media (min-width: 300px) and (max-width: 500px) {
+      margin: 4px;
+    }
 
     a {
       display: block;

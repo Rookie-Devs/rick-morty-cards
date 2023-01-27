@@ -13,6 +13,18 @@ export const CardFrontContainer = styled.div`
   &:hover {
     box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.primary};
   }
+
+  @media (max-width: 400px) {
+    width: 360px;
+  }
+
+  @media (min-width: 400px) and (max-width: 500px) {
+    width: 410px;
+  }
+
+  @media (min-width: 500px) and (max-width: 700px) {
+    width: 500px;
+  }
 `;
 
 export const Image = styled.img`
@@ -37,6 +49,10 @@ export const Name = styled.h3`
   text-align: center;
   align-self: center;
   margin-bottom: 40px;
+
+  @media (max-width: 375px) {
+    font-size: ${props => (props.name.length > 15 ? '1.1rem' : '1.3rem')};
+  }
 `;
 
 export const CardButton = styled(Button)`

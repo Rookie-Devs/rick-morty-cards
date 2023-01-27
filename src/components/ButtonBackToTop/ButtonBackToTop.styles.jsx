@@ -17,4 +17,12 @@ export const Button = styled(ArrowUpCircleIcon)`
       opacity: 100%;
       pointer-events: all;
     `}
+
+  @media (min-width: 300px) and (max-width: 700px) {
+    ${({ changePlace }) =>
+      changePlace &&
+      css`
+        bottom: 120px;
+      `}
+  }
 `;

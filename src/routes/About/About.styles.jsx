@@ -13,7 +13,10 @@ export const Profiles = styled.section`
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  height: 60vh;
+
+  @media (min-width: 300px) and (max-width: 470px) {
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled(Link)`
@@ -28,7 +31,7 @@ export const Button = styled(Link)`
   font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none;
-  margin: 0 auto;
+  margin: 30px auto;
   display: flex;
   text-align: center;
   justify-content: center;
