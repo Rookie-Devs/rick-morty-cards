@@ -48,7 +48,7 @@ export const Name = styled.h3`
   padding-top: 2px;
   color: ${({ theme }) => theme.colors.primary};
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-size: ${({ name }) => (name.length > 20 ? '1.2rem' : '1.5rem')};
   text-align: center;
 `;
@@ -57,6 +57,14 @@ export const Info = styled.div`
   display: flex;
   flex-wrap: wrap;
   min-height: 170px;
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  /* @media (min-width: 500px) and (max-width: 700px) {
+    width: 500px;
+  } */
 `;
 
 export const Block = styled.div`
@@ -85,91 +93,3 @@ export const ModalButton = styled(Button)`
   margin: 12px auto;
   font-size: 1.2rem;
 `;
-
-//   @media (max-width: 375px) {
-//     .card {
-//       min-height: 250px;
-//       width: 90%;
-
-//       .card-text-container {
-//         width: 100%;
-
-//         .card-username {
-//           font-size: 1.3rem;
-//         }
-
-//         .card-username-compact {
-//           font-size: 1.3rem;
-//         }
-//       }
-
-//       .card-info-container {
-//         .card-text {
-//           font-size: 1rem;
-//         }
-
-//         .card-text-value {
-//           font-size: 0.9rem;
-//         }
-//       }
-//     }
-//   }
-
-//   @media (min-width: 376px) and (max-width: 768px) {
-//     .card {
-//       min-height: 250px;
-//       width: 90%;
-
-//       .card-text-container {
-//         width: 100%;
-
-//         .card-username {
-//           font-size: 1.3rem;
-//         }
-
-//         .card-username-compact {
-//           font-size: 1.2rem;
-//         }
-//       }
-
-//       .card-info-container {
-//         .card-text {
-//           font-size: 1.1rem;
-//         }
-
-//         .card-text-value {
-//           font-size: 1rem;
-//         }
-//       }
-//     }
-//   }
-
-//   @media (min-width: 768px) and (max-width: 1024px) {
-//     .card {
-//       width: 90%;
-//       .card-image {
-//         min-width: 50%;
-//       }
-
-//       .card-text-container {
-//         .card-username {
-//           font-size: 1.5rem;
-//         }
-
-//         .card-username-compact {
-//           font-size: 1.4rem;
-//         }
-//       }
-
-//       .card-info-container {
-//         .card-text {
-//           font-size: 1.3rem;
-//         }
-
-//         .card-text-value {
-//           font-size: 1.2rem;
-//         }
-//       }
-//     }
-//   }
-// }

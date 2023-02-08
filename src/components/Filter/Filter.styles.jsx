@@ -3,10 +3,14 @@ import { css } from 'styled-components';
 import { Button } from '../FilterButton/FilterButton.styles';
 
 export const Container = styled.div`
-  margin-left: 50px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+
+  @media (min-width: 300px) and (max-width: 600px) {
+    margin-left: 0px;
+  }
 `;
 
 export const Value = styled.span`

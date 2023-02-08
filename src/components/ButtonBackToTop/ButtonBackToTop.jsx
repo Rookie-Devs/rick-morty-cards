@@ -13,7 +13,7 @@ export const ButtonBackToTop = () => {
   };
 
   const handleChangePlace = () => {
-    if (scrollY >= 6500) {
+    if (scrollY >= 4700) {
       setChangePlace(true);
     } else setChangePlace(false);
   };

@@ -22,7 +22,7 @@ export const Button = styled(ArrowUpCircleIcon)`
     ${({ changePlace }) =>
       changePlace &&
       css`
-        bottom: 120px;
+        bottom: 100px;
       `}
   }
 `;

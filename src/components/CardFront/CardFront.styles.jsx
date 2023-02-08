@@ -3,7 +3,6 @@ import { Button } from '../FilterButton/FilterButton.styles';
 
 export const CardFrontContainer = styled.div`
   border-radius: 12px;
-  min-height: 280px;
   width: 600px;
   overflow: hidden;
   display: flex;
@@ -31,10 +30,15 @@ export const Image = styled.img`
   min-width: 50%;
   min-height: 80%;
   border-radius: 2px;
+
+  @media (max-width: 400px) {
+    width: 240px;
+    /* padding: 20px; */
+  }
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;

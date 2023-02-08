@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { CardFront, CardBack } from '../../components';
-import { Card } from './RenderCard.styles';
 
 export const RenderCard = ({ item }) => {
   const [showBack, setShowBack] = useState(false);
@@ -10,7 +9,7 @@ export const RenderCard = ({ item }) => {
   };
 
   return (
-    <Card>
+    <>
       <CardFront
         url={item.image}
         name={item.name}
@@ -30,6 +29,6 @@ export const RenderCard = ({ item }) => {
         showBack={showBack}
         setShowBack={setShowBack}
       />
-    </Card>
+    </>
   );
 };
