@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Button } from '../FilterButton/FilterButton.styles';
 
+type NameProps = {
+  name: string;
+};
+
 export const ModalBackground = styled.div`
   position: fixed;
   top: 0;
@@ -43,13 +47,13 @@ export const InfoContainer = styled.div`
   width: 100%;
 `;
 
-export const Name = styled.h3`
+export const Name = styled.h3<NameProps>`
   margin: 0;
   padding-top: 2px;
   color: ${({ theme }) => theme.colors.primary};
   padding-top: 20px;
   padding-bottom: 10px;
-  font-size: ${({ name }) => (name.length > 20 ? '1.2rem' : '1.5rem')};
+  font-size: ${({ name }) => (name.length > 20 ? '1.2rem' : '1.3rem')};
   text-align: center;
 `;
 
@@ -61,10 +65,6 @@ export const Info = styled.div`
   @media (min-width: 300px) and (max-width: 500px) {
     flex-direction: column;
   }
-
-  /* @media (min-width: 500px) and (max-width: 700px) {
-    width: 500px;
-  } */
 `;
 
 export const Block = styled.div`

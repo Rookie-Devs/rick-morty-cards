@@ -1,5 +1,7 @@
 import { Authors } from '../../components/Authors/Authors';
+// @ts-ignore next-line
 import emerson from '../../assets/emerson.jpg';
+// @ts-ignore next-line
 import joao from '../../assets/joao.jpg';
 import { Introduction, Profiles, Button } from './About.styles';
 

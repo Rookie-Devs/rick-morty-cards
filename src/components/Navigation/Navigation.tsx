@@ -6,11 +6,11 @@ import {
   Header,
   ButtonBanner,
   ApiButton,
-} from './Navigation.styles.jsx';
+} from './Navigation.styles';
 
 export const Navigation = () => {
   const backToMiddle = () => {
-    window.scrollTo({
+    scrollTo({
       top: 650,
       behavior: 'smooth',
     });

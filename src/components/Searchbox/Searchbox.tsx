@@ -1,7 +1,12 @@
 import { Container, Search, Input } from './Searchbox.styles';
 
-export const Searchbox = ({ search, setSearch }) => {
-  const searchboxFilter = event => {
+type SearchboxProps = {
+  search: string;
+  setSearch: (t: string) => void;
+};
+
+export const Searchbox = ({ search, setSearch }: SearchboxProps) => {
+  const searchboxValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     const targetValue = event.target.value;
     setSearch(targetValue);
   };
@@ -14,7 +19,7 @@ export const Searchbox = ({ search, setSearch }) => {
         placeholder="Search here"
         id="search"
         value={search}
-        onChange={searchboxFilter}
+        onChange={searchboxValue}
       ></Input>
     </Container>
   );

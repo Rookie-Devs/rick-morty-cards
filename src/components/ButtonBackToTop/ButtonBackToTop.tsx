@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Button } from './ButtonBackToTop.styles.jsx';
+import { Button } from './ButtonBackToTop.styles';
 
 export const ButtonBackToTop = () => {
   const [showButton, setShowButton] = useState(false);
@@ -38,12 +38,10 @@ export const ButtonBackToTop = () => {
   };
 
   return (
-    <>
-      <Button
-        changePlace={changePlace}
-        showButton={showButton}
-        onClick={handleClick}
-      />
-    </>
+    <Button
+      changePlace={changePlace}
+      showButton={showButton}
+      onClick={handleClick}
+    />
   );
 };

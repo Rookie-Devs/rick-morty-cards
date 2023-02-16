@@ -2,11 +2,15 @@ import { useNavigate } from 'react-router-dom';
 
 import { Paginate } from './Pagination.styles';
 
-export const Pagination = ({ pages = [] }) => {
+type PaginationProps = {
+  pages: number;
+};
+
+export const Pagination = ({ pages }: PaginationProps) => {
   const navigate = useNavigate();
 
-  const handlePageClick = event => {
-    navigate(`/page/${event.selected + 1}`);
+  const handlePageClick = (selectedItem: any) => {
+    navigate(`/page/${selectedItem.selected + 1}`);
     scrollTo({
       top: 650,
     });
@@ -20,7 +24,7 @@ export const Pagination = ({ pages = [] }) => {
       pageRangeDisplayed={2}
       pageCount={pages}
       previousLabel="previous"
-      renderOnZeroPageCount={null}
+      renderOnZeroPageCount={() => null}
     />
   );
 };

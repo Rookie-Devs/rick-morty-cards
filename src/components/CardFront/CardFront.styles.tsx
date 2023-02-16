@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Button } from '../FilterButton/FilterButton.styles';
 
+type NameProps = {
+  name: string;
+};
+
 export const CardFrontContainer = styled.div`
   border-radius: 12px;
   width: 600px;
@@ -33,7 +37,6 @@ export const Image = styled.img`
 
   @media (max-width: 400px) {
     width: 240px;
-    /* padding: 20px; */
   }
 `;
 
@@ -45,11 +48,12 @@ export const Container = styled.div`
   text-align: center;
   align-items: center;
 `;
-export const Name = styled.h3`
+
+export const Name = styled.h3<NameProps>`
   margin: 0 auto;
   padding-top: 2px;
   color: ${({ theme }) => theme.colors.primary};
-  font-size: ${props => (props.name.length > 20 ? '1.2rem' : '1.5rem')};
+  font-size: ${props => (props.name.length > 20 ? '1.2rem' : '1.3rem')};
   text-align: center;
   align-self: center;
   margin-bottom: 40px;

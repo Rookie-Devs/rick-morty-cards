@@ -21,16 +21,3 @@ export const Button = styled.button`
     box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 `;
-
-// @media (max-width: 400px) {
-//   .toggle-filter-button {
-//     min-width: 10%;
-//     font-size: 1.1rem;
-//   }
-// }
-
-// @media (min-width: 401px) and (max-width: 700px) {
-//   .toggle-filter-button {
-//     min-width: 15%;
-//   }
-// }

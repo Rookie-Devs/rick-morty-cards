@@ -11,8 +11,8 @@ const theme = {
     md: '2em',
     lg: '3em',
   },
-};
+} as const;
 
-export const Theme = ({ children }) => (
+export const Theme = ({ children }: React.PropsWithChildren) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );

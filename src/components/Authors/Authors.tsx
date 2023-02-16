@@ -1,7 +1,14 @@
 import { SocialIcon } from 'react-social-icons';
 import { ProfileContainer, Picture, Name, Icons } from './Authors.styles';
 
-export const Authors = ({ linkedin, github, name, image }) => {
+type AuthorsProps = {
+  linkedin: string;
+  github: string;
+  name: string;
+  image: string;
+};
+
+export const Authors = ({ linkedin, github, name, image }: AuthorsProps) => {
   return (
     <ProfileContainer>
       <Picture src={image}></Picture>

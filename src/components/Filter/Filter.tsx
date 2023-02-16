@@ -5,7 +5,19 @@ import {
   FilterButton,
 } from './Filter.styles';
 
-export const Filter = ({ status, setStatus, gender, setGender }) => {
+type FilterProps = {
+  status: string;
+  setStatus: (s: string) => void;
+  gender: string;
+  setGender: (s: string) => void;
+};
+
+export const Filter = ({
+  status,
+  setStatus,
+  gender,
+  setGender,
+}: FilterProps) => {
   return (
     <Container>
       <Value>Status</Value>

@@ -14,12 +14,41 @@ import {
 
 import { SearchFilter, Loading, Error } from './Home.styles';
 
-const ACTIONS_TYPES = {
-  SET_PAGES: 'SET_PAGES',
-  SET_NAME: 'SET_NAME',
-  SET_STATUS: 'SET_STATUS',
-  SET_GENDER: 'SET_GENDER',
+type Actions = {
+  type: ACTIONS_TYPES;
+  payload: string | number;
 };
+
+type State = {
+  pages: number;
+  name: string;
+  status: string;
+  gender: string;
+};
+
+export type Cards = {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {
+    name: string;
+  };
+  location: {
+    name: string;
+  };
+  image: string;
+  episode: string[];
+};
+
+enum ACTIONS_TYPES {
+  SET_PAGES = 'SET_PAGES',
+  SET_NAME = 'SET_NAME',
+  SET_STATUS = 'SET_STATUS',
+  SET_GENDER = 'SET_GENDER',
+}
 
 const INITIAL_STATE = {
   pages: 1,
@@ -28,23 +57,36 @@ const INITIAL_STATE = {
   gender: '',
 };
 
-const paramsReducer = (state, action) => {
-  switch (action.type) {
+const paramsReducer = (state: State, action: Actions): State => {
+  const { payload, type } = action;
+  switch (type) {
     case ACTIONS_TYPES.SET_PAGES:
-      return { ...state, pages: action.payload };
+      if (typeof payload === 'number') {
+        return { ...state, pages: payload };
+      }
+      return { ...state };
     case ACTIONS_TYPES.SET_NAME:
-      return { ...state, name: action.payload };
+      if (typeof payload === 'string') {
+        return { ...state, name: payload };
+      }
+      return { ...state };
     case ACTIONS_TYPES.SET_STATUS:
-      return { ...state, status: action.payload };
+      if (typeof payload === 'string') {
+        return { ...state, status: payload };
+      }
+      return { ...state };
     case ACTIONS_TYPES.SET_GENDER:
-      return { ...state, gender: action.payload };
+      if (typeof payload === 'string') {
+        return { ...state, gender: payload };
+      }
+      return { ...state };
     default:
       return state;
   }
 };
 
 export const Home = () => {
-  let { page = 1 } = useParams();
+  const { page = 1 } = useParams();
 
   const navigate = useNavigate();
 
@@ -57,12 +99,12 @@ export const Home = () => {
 
   const handleNavigate = () => navigate('/page/1');
 
-  const setStatus = newStatus => {
+  const setStatus = (newStatus: string) => {
     handleNavigate();
     dispatch({ type: ACTIONS_TYPES.SET_STATUS, payload: newStatus });
   };
 
-  const setGender = newGender => {
+  const setGender = (newGender: string) => {
     handleNavigate();
     dispatch({ type: ACTIONS_TYPES.SET_GENDER, payload: newGender });
   };
@@ -80,7 +122,7 @@ export const Home = () => {
     };
   }, [search]);
 
-  const fetchData = async () => {
+  const fetchData = async (): Promise<Cards[]> => {
     const response = await axios(
       `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
     );
@@ -88,10 +130,10 @@ export const Home = () => {
       type: ACTIONS_TYPES.SET_PAGES,
       payload: response.data.info.pages ?? 0,
     });
-    return response.data.results ?? [];
+    return response.data.results;
   };
 
-  const { data, error, fetchStatus } = useQuery({
+  const { data, error, fetchStatus } = useQuery<Cards[], Error>({
     queryKey: ['cards', page, name, status, gender],
     queryFn: fetchData,
     refetchOnWindowFocus: false,
@@ -116,8 +158,8 @@ export const Home = () => {
       </SearchFilter>
       {fetchStatus === 'fetching' && <Loading>Loading...</Loading>}
       {error && <Error>An error has occurred: {error.message}</Error>}
-      <CardList data={data} />
-      <Pagination pages={pages} page={page} />
+      <CardList cards={data} />
+      <Pagination pages={pages} />
       <ButtonBackToTop />
     </>
   );

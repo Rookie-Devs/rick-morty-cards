@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { CardFront, CardBack } from '../../components';
+import { Cards } from '../../routes/Home/Home';
 
-export const RenderCard = ({ item }) => {
+type RenderCardProps = {
+  item: Cards;
+};
+
+export const RenderCard = ({ item }: RenderCardProps) => {
   const [showBack, setShowBack] = useState(false);
 
   const handleShowModal = () => {

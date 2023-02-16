@@ -10,6 +10,20 @@ import {
   ModalButton,
 } from './CardBack.styles';
 
+type CardBackProps = {
+  showBack: boolean;
+  name: string;
+  status: string;
+  species: string;
+  origin: string;
+  type: string;
+  location: string;
+  episodes: string[];
+  gender: string;
+  id: number;
+  setShowBack: (s: boolean) => void;
+};
+
 export const CardBack = ({
   showBack,
   name,
@@ -22,7 +36,7 @@ export const CardBack = ({
   gender,
   id,
   setShowBack,
-}) => {
+}: CardBackProps) => {
   if (showBack) {
     return (
       <ModalBackground key={id} onClick={() => setShowBack(!showBack)}>
@@ -64,7 +78,7 @@ export const CardBack = ({
                 setShowBack(!showBack);
               }}
             >
-              Close Modal
+              Close
             </ModalButton>
           </InfoContainer>
         </Cardback>

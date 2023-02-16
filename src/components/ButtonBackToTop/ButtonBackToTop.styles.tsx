@@ -1,7 +1,12 @@
 import { ArrowUpCircleIcon } from '@heroicons/react/24/solid';
 import styled, { css } from 'styled-components';
 
-export const Button = styled(ArrowUpCircleIcon)`
+type ButtonProps = {
+  showButton: boolean;
+  changePlace: boolean;
+};
+
+export const Button = styled(ArrowUpCircleIcon)<ButtonProps>`
   width: 48px;
   color: ${({ theme }) => theme.colors.secondary};
   position: fixed;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+// @ts-ignore next-line
 import background from '../../assets/background.jpg';
 
 export const Banner = styled.section`
@@ -77,42 +78,3 @@ export const ApiButton = styled.a`
   font-weight: bold;
   text-decoration: none;
 `;
-
-// @media (max-width: 375px) {
-//   .banner {
-//     .navbar-container {
-//       .navbar-buttons {
-//         padding: 6px;
-//         font-size: 1.4rem;
-//       }
-//     }
-//     .header {
-//       font-size: 2rem;
-//     }
-//     .button-banner {
-//       padding: 10px;
-//       .api-button {
-//         font-size: 1.4rem;
-//       }
-//     }
-//   }
-// }
-
-// @media (min-width: 376px) and (max-width: 768px) {
-//   .banner {
-//     .navbar-container {
-//       .nnavbar-buttons {
-//         padding: 6px;
-//       }
-//     }
-//     .header {
-//       font-size: 2.5rem;
-//     }
-//     .button-banner {
-//       padding: 10px;
-//       .api-button {
-//         font-size: 1.6rem;
-//       }
-//     }
-//   }
-// }

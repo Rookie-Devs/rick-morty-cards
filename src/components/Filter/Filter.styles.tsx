@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { css } from 'styled-components';
 import { Button } from '../FilterButton/FilterButton.styles';
 
+type FilterButtonProps = {
+  isActive?: boolean;
+};
+
 export const Container = styled.div`
   margin-left: 30px;
   display: flex;
@@ -31,7 +35,7 @@ export const ButtonContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const FilterButton = styled(Button)`
+export const FilterButton = styled(Button)<FilterButtonProps>`
   min-width: 60px;
   padding: 8px;
   margin-right: 4px;
@@ -41,8 +45,8 @@ export const FilterButton = styled(Button)`
     box-shadow: 1px 1px 25px ${({ theme }) => theme.colors.secondary};
   }
 
-  ${props =>
-    props.isActive &&
+  ${({ isActive }) =>
+    isActive &&
     css`
       color: ${({ theme }) => theme.colors.secondary};
       background-color: ${({ theme }) => theme.colors.primary};
