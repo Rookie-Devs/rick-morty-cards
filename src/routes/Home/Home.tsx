@@ -26,7 +26,7 @@ type State = {
   gender: string;
 };
 
-export type Cards = {
+export type Card = {
   id: number;
   name: string;
   status: string;
@@ -57,29 +57,33 @@ const INITIAL_STATE = {
   gender: '',
 };
 
+const payloadNumber = (state: State, payload: number) => {
+  if (typeof payload === 'number') {
+    return { ...state, pages: payload };
+  } else {
+    return { ...state };
+  }
+};
+
+const payloadString = (state: State, payload: string, propetyName: string) => {
+  if (typeof payload === 'string') {
+    return { ...state, [propetyName]: payload };
+  } else {
+    return { ...state };
+  }
+};
+
 const paramsReducer = (state: State, action: Actions): State => {
   const { payload, type } = action;
   switch (type) {
     case ACTIONS_TYPES.SET_PAGES:
-      if (typeof payload === 'number') {
-        return { ...state, pages: payload };
-      }
-      return { ...state };
+      return payloadNumber(state, payload as number);
     case ACTIONS_TYPES.SET_NAME:
-      if (typeof payload === 'string') {
-        return { ...state, name: payload };
-      }
-      return { ...state };
+      return payloadString(state, payload as string, 'name');
     case ACTIONS_TYPES.SET_STATUS:
-      if (typeof payload === 'string') {
-        return { ...state, status: payload };
-      }
-      return { ...state };
+      return payloadString(state, payload as string, 'status');
     case ACTIONS_TYPES.SET_GENDER:
-      if (typeof payload === 'string') {
-        return { ...state, gender: payload };
-      }
-      return { ...state };
+      return payloadString(state, payload as string, 'gender');
     default:
       return state;
   }
@@ -122,7 +126,7 @@ export const Home = () => {
     };
   }, [search]);
 
-  const fetchData = async (): Promise<Cards[]> => {
+  const fetchData = async (): Promise<Card[]> => {
     const response = await axios(
       `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
     );
@@ -133,7 +137,7 @@ export const Home = () => {
     return response.data.results;
   };
 
-  const { data, error, fetchStatus } = useQuery<Cards[], Error>({
+  const { data, error, fetchStatus } = useQuery<Card[], Error>({
     queryKey: ['cards', page, name, status, gender],
     queryFn: fetchData,
     refetchOnWindowFocus: false,

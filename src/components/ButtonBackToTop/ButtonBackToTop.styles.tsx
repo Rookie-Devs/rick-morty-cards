@@ -15,11 +15,13 @@ export const Button = styled(ArrowUpCircleIcon)<ButtonProps>`
   opacity: 0%;
   pointer-events: none;
   cursor: pointer;
+  transform: scale(0);
   transition: all 0.3s ease-in-out;
   ${({ showButton }) =>
     showButton &&
     css`
       opacity: 100%;
+      transform: scale(1);
       pointer-events: all;
     `}
 

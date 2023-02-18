@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate } from 'react-router-dom';
 
 import { Paginate } from './Pagination.styles';
@@ -8,7 +9,6 @@ type PaginationProps = {
 
 export const Pagination = ({ pages }: PaginationProps) => {
   const navigate = useNavigate();
-
   const handlePageClick = (selectedItem: any) => {
     navigate(`/page/${selectedItem.selected + 1}`);
     scrollTo({

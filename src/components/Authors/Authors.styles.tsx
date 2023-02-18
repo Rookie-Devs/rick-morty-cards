@@ -7,9 +7,9 @@ export const ProfileContainer = styled.div`
 `;
 
 export const Picture = styled.img`
-  width: 200px;
+  width: 185px;
   height: 200px;
-  border-radius: 100px;
+  border-radius: 50%;
   margin-bottom: 10px;
 `;
 

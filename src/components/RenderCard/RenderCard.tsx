@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { CardFront, CardBack } from '../../components';
-import { Cards } from '../../routes/Home/Home';
+import { Card } from '../../routes/Home/Home';
 
 type RenderCardProps = {
-  item: Cards;
+  item: Card;
 };
 
 export const RenderCard = ({ item }: RenderCardProps) => {
