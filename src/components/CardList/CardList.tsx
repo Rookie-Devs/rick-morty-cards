@@ -1,9 +1,9 @@
 import { RenderCard } from '../../components';
 import { Container } from './CardList.styles';
-import { Cards } from '../../routes/Home/Home';
+import { Card } from '../../routes/Home/Home';
 
 type CardListProps = {
-  cards: Cards[];
+  cards: Card[];
 };
 
 export const CardList = ({ cards }: CardListProps) => {

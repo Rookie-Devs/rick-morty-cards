@@ -6,7 +6,7 @@ import {
   CardButton,
 } from './CardFront.styles';
 
-type CardFrontProps = {
+export type CardFrontProps = {
   name: string;
   url: string;
   id: number;

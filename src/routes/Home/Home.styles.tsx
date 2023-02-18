@@ -9,7 +9,7 @@ export const SearchFilter = styled.div`
 `;
 
 export const Loading = styled.div`
-  height: 10vh;
+  height: max-content;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
