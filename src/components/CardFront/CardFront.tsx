@@ -21,7 +21,7 @@ export const CardFront = ({
 }: CardFrontProps) => {
   return (
     <CardFrontContainer key={id}>
-      <Image alt="Cards" src={url} />
+      <Image alt={name} src={url} />
       <Container>
         <Name name={name}>{name}</Name>
         <CardButton onClick={handleShowModal}>Details</CardButton>
