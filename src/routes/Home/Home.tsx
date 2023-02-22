@@ -141,7 +141,6 @@ export const Home = () => {
     queryKey: ['cards', page, name, status, gender],
     queryFn: fetchData,
     refetchOnWindowFocus: false,
-    staleTime: 30000,
     initialData: [],
     keepPreviousData: true,
     retry: 2,
