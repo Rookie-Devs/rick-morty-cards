@@ -57,7 +57,7 @@ const INITIAL_STATE = {
   gender: '',
 };
 
-const payloadNumber = (state: State, payload: number) => {
+const payloadNumber = (state: State, payload: unknown) => {
   if (typeof payload === 'number') {
     return { ...state, pages: payload };
   } else {
@@ -65,7 +65,7 @@ const payloadNumber = (state: State, payload: number) => {
   }
 };
 
-const payloadString = (state: State, payload: string, propetyName: string) => {
+const payloadString = (state: State, payload: unknown, propetyName: string) => {
   if (typeof payload === 'string') {
     return { ...state, [propetyName]: payload };
   } else {
@@ -77,13 +77,13 @@ const paramsReducer = (state: State, action: Actions): State => {
   const { payload, type } = action;
   switch (type) {
     case ACTIONS_TYPES.SET_PAGES:
-      return payloadNumber(state, payload as number);
+      return payloadNumber(state, payload);
     case ACTIONS_TYPES.SET_NAME:
-      return payloadString(state, payload as string, 'name');
+      return payloadString(state, payload, 'name');
     case ACTIONS_TYPES.SET_STATUS:
-      return payloadString(state, payload as string, 'status');
+      return payloadString(state, payload, 'status');
     case ACTIONS_TYPES.SET_GENDER:
-      return payloadString(state, payload as string, 'gender');
+      return payloadString(state, payload, 'gender');
     default:
       return state;
   }

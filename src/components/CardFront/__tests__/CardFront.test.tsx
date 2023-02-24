@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { CardFront, CardFrontProps } from '../CardFront';
+import { Theme } from '../../../Theme';
 import '@testing-library/jest-dom';
 
 const server = setupServer(
@@ -24,12 +25,14 @@ describe('CardFront', () => {
   it('should render the card front with name and image', async () => {
     const handleShowModal = jest.fn();
     render(
-      <CardFront
-        name="Rick Sanchez"
-        url="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-        id={1}
-        handleShowModal={handleShowModal}
-      />
+      <Theme>
+        <CardFront
+          name="Rick Sanchez"
+          url="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+          id={1}
+          handleShowModal={handleShowModal}
+        />
+      </Theme>
     );
     const nameElement = await screen.findByText('Rick Sanchez');
     const imageElement = screen.getByAltText('Rick Sanchez');
@@ -40,12 +43,14 @@ describe('CardFront', () => {
   it('should call handleShowModal function when Details button is clicked', async () => {
     const handleShowModal = jest.fn();
     render(
-      <CardFront
-        name="Rick Sanchez"
-        url="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-        id={1}
-        handleShowModal={handleShowModal}
-      />
+      <Theme>
+        <CardFront
+          name="Rick Sanchez"
+          url="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+          id={1}
+          handleShowModal={handleShowModal}
+        />
+      </Theme>
     );
     const buttonElement = await screen.findByText('Details');
     fireEvent.click(buttonElement);
